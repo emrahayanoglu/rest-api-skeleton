@@ -237,6 +237,7 @@ describe(`The ${process.env.APP} REST API`, function() {
                     .send(edited_doc)
                     .expect(200, (err, res) => {
                       if(err) {
+                        console.log(err);
                         throw new Error(err);
                       }
                       if(res.body.createdAt === res.body.updatedAt) {
