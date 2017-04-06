@@ -236,6 +236,9 @@ describe(`The ${process.env.APP} REST API`, function() {
                   request(app).post(spec_path).set('Authorization', `Bearer ${token}`)
                     .send(edited_doc)
                     .expect(200, (err, res) => {
+                      if(err) {
+                        throw new Error(err);
+                      }
                       if(res.body.createdAt === res.body.updatedAt) {
                         throw new Error(`Expected ${model}.createdAt NOT to equal ${model}.updatedAt.`);
                       }
