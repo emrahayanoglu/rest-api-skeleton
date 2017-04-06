@@ -237,7 +237,6 @@ describe(`The ${process.env.APP} REST API`, function() {
                     .send(edited_doc)
                     .expect(200, (err, res) => {
                       if(res.body.createdAt === res.body.updatedAt) {
-                        console.log(res.body.createdAt, res.body.updatedAt);
                         throw new Error(`Expected ${model}.createdAt NOT to equal ${model}.updatedAt.`);
                       }
                       done();
