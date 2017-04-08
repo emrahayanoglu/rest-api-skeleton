@@ -4,7 +4,7 @@
   "description": "A REST API skeleton based on NodeJS, Express, MongoDB, Mongoose using JSON Web Tokens (JWT).",
   "main": "index.js",
   "scripts": {
-    "test": "nyc --reporter=lcov --reporter=text-lcov mocha",
+    "test": "nyc --reporter=lcov --reporter=text mocha",
     "watch": "nyc mocha --watch",
     "start": "nodemon index.js",
     "cover": "nyc --reporter=html --reporter=text mocha"
